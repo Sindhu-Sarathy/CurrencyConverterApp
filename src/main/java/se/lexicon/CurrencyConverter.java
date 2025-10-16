@@ -7,6 +7,7 @@ import java.time.format.DateTimeFormatter;
 public class CurrencyConverter {
     private static final DecimalFormat df=new DecimalFormat("0.00");
 
+    //Hardcoded Currency values
     public double convertCurrency(String from,String to,double amount){
         double result=0;
         if(from.equals("SEK") && to.equals("USD")){
@@ -28,6 +29,7 @@ public class CurrencyConverter {
         return result;
     }
 
+    //Displaying the result with date and time
     public void displayResult(String from,String to,double amount,double result){
         String dateTime= LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
         System.out.println("------------------------------");

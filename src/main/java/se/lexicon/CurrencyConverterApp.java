@@ -13,7 +13,7 @@ public class CurrencyConverterApp {
           int choice;
         do{
             displayMenu();
-            choice=validMenuChoice(scanner);
+            choice=validMenuChoice(scanner);  //Validating the menu
             switch (choice){
                 case 1:
                     Conversion(scanner,converter,"SEK","USD");
@@ -39,6 +39,7 @@ public class CurrencyConverterApp {
 
       }
 
+      //To display the menu
       private static void displayMenu(){
           System.out.println("----Currency Converter----");
           System.out.println("1. Convert SEK to USD");
@@ -49,6 +50,7 @@ public class CurrencyConverterApp {
           System.out.print("Enter your choice: ");
       }
 
+      //To convert the currency
       public static void Conversion(Scanner scanner,CurrencyConverter convert,String from,String To){
 
           double amount=validationForAmount(scanner,from);

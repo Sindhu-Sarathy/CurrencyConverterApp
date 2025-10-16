@@ -3,6 +3,8 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 
 public class CurrencyConvValidation {
+
+    //Validating the menu
     public static int validMenuChoice(Scanner scanner){
         while(!scanner.hasNextInt()){
             System.out.print("Invalid Input.Please enter the number: ");
@@ -11,6 +13,7 @@ public class CurrencyConvValidation {
         return scanner.nextInt();
     }
 
+    //To validate the entered amount
     public static double validationForAmount(Scanner scanner,String currency){
         double amount;
         while(true){
