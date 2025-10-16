@@ -1,5 +1,6 @@
 package se.lexicon;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class CurrencyConvValidation {
     public static int validMenuChoice(Scanner scanner){
@@ -10,4 +11,23 @@ public class CurrencyConvValidation {
         return scanner.nextInt();
     }
 
+    public static double validationForAmount(Scanner scanner,String currency){
+        double amount;
+        while(true){
+            System.out.print("Enter amount in "+currency+": ");
+            try{
+                amount=scanner.nextDouble();
+                if(amount<0){
+                    System.out.println("Amount cannot be negative.Try again");
+                }
+                else{
+                    return amount;
+                }
+            }
+            catch (InputMismatchException e){
+                System.out.println("Invalid input.Please enter the number.");
+                scanner.next();
+            }
+        }
+    }
 }
