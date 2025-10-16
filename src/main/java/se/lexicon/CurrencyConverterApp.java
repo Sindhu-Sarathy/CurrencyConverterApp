@@ -1,12 +1,16 @@
 package se.lexicon;
 import java.util.Scanner;
+import static se.lexicon.CurrencyConvValidation.*;
 
 public class CurrencyConverterApp {
       public static void main(String[] args){
           Scanner scanner=new Scanner(System.in);
           int choice;
-
-         displayMenu();
+        do{
+            displayMenu();
+            choice=validMenuChoice(scanner);
+        }
+        while(choice!=0);
 
       }
 
