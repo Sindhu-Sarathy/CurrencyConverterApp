@@ -1,6 +1,8 @@
 package se.lexicon;
 
 import java.text.DecimalFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class CurrencyConverter {
     private static final DecimalFormat df=new DecimalFormat("0.00");
@@ -24,5 +26,14 @@ public class CurrencyConverter {
         }
 
         return result;
+    }
+
+    public void displayResult(String from,String to,double amount,double result){
+        String dateTime= LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+        System.out.println("------------------------------");
+        System.out.println("The Result is: ");
+        System.out.println(df.format(amount)+" "+ from +"="+ df.format(result) +" "+ to);
+        System.out.println("Date and Time: "+dateTime);
+        System.out.println("------------------------------");
     }
 }
